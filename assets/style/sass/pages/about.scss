@@ -1,0 +1,184 @@
+main.ywca-harbor {
+    &.about {
+
+        &-history {
+            %history-hero {
+                background-repeat: no-repeat;
+                background-size: cover;
+                min-height: 35.35em;
+                text-align: center;
+            }
+
+            .history-foundations {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://socialwelfare.library.vcu.edu/wp-content/uploads/2015/02/gyR2N2uwCVMmj-akTMdSiyIiU26WjRJ65giE18HHJDc.png');
+                @extend %history-hero;
+                @extend %parallax;
+                background-position: 50% -12%;
+            }
+
+            .history-mid-century {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://i0.wp.com/waterandpower.org/5%20Historic%20Photos%205/San_Pedro_ca1940s.jpg');
+                @extend %history-hero;
+                @extend %parallax;
+                background-position: 50% 12%;
+            }
+
+            .history-present {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://sanpedro.com/wp-content/uploads/2017/05/YWCA-Morgan-House-880x437.png');
+                @extend %history-hero;
+            }
+
+            .history-hero-description {
+                padding: 120px 80px;
+            }
+        }
+
+        &-mission {
+            #aboutMissionHero {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                    url(https://image.shutterstock.com/image-photo/african-american-cute-little-girl-260nw-288152339.jpg);
+                @extend %hero;
+            }
+
+            .about-mission-statements {
+                text-align: center;
+
+                p {
+                    font-size: 36px;
+                }
+
+                h4 {
+                    margin: 0;
+                }
+            }
+
+            #aboutMissionVision {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                    url(https://image.shutterstock.com/image-photo/group-women-socialize-teamwork-happiness-260nw-526817902.jpg);
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                background-size: cover;
+                text-align: center;
+                min-height: 27.27em;
+
+                h1 {
+                    background: rgba(0, 0, 0, 0.5);
+                    padding: 4px 24px;
+                    display: initial;
+                }
+            }
+
+            #aboutMissionChangeLives {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                    url(https://image.shutterstock.com/image-photo/little-girl-hugging-mother-outdoors-260nw-1174991539.jpg);
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                background-size: cover;
+                text-align: center;
+                min-height: 27.27em;
+                padding: 12%;
+                margin: 0;
+
+                @media screen and (max-width: 652px) {
+                    padding: 20%;
+                }
+            }
+        }
+
+        &-partners {
+            #aboutPartnersHero {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                    url('https://image.shutterstock.com/image-photo/group-diverse-hands-together-joining-260nw-344201303.jpg');
+                @extend %hero;
+            }
+
+            #aboutPartnersStatement {
+                line-height: 1.75;
+                padding-bottom: 28px;
+                position: relative;
+                text-align: center;
+
+                p {
+                    font-size: 24px;
+                }
+
+                &::before {
+                    background: $secondaryOrange;
+                    margin-left: -60px;
+                    position: absolute;
+                    width: 120px;
+                    content: '';
+                    height: 5px;
+                    bottom: 0;
+                    left: 50%;
+                }
+            }
+
+            #aboutPartnersCardGroup {
+                img {
+                    border-top-left-radius: 0.5rem;
+                    border-top-right-radius: 0.5rem;
+                    object-fit: contain;
+                    height: 240px;
+                }
+            }
+
+            #aboutPartnersReviews {
+                .row {
+                    text-align: center;
+                    padding: 4% 0px;
+                    margin: 4% 0px;
+
+                    .col {
+                        p {
+                            max-width: 88%;
+                            margin: auto;
+                            margin-bottom: 2rem;
+
+                            &:first-child {
+                                color: $secondaryOrange;
+                                font-size: 24px;
+                            }
+                        }
+
+                        &::before {
+                            background: $secondaryOrange;
+                            margin-left: -60px;
+                            position: absolute;
+                            width: 120px;
+                            content: '';
+                            height: 5px;
+                            bottom: 0;
+                            left: 50%;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-team {
+            #aboutTeamHero {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                    url('http://legendasparafotos.net.br/wp-content/uploads/2018/01/frases-para-fotos.jpg');
+                @extend %hero;
+            }
+
+            #aboutTeamEmployees,
+            #aboutTeamDirectors {
+                text-align: center;
+
+                .card-group {
+                    text-align: initial;
+
+                    img {
+                        border-top-left-radius: 0.5rem;
+                        border-top-right-radius: 0.5rem;
+                        object-position: 75% 50%;
+                        object-fit: cover;
+                        height: 240px;
+                    }
+                }
+            }
+        }
+    }
+}

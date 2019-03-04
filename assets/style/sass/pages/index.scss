@@ -1,0 +1,66 @@
+main.ywca-harbor {
+    &.index {
+        #indexHero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                url(https://image.shutterstock.com/image-photo/profile-little-african-girl-writing-260nw-536550898.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: calc(100vh - 116px);
+        }
+
+        #indexStatement {
+            line-height: 1.75;
+            padding-bottom: 28px;
+            position: relative;
+            text-align: center;
+
+            p {
+                font-size: 24px;
+            }
+
+            &::before {
+                background: $secondaryOrange;
+                margin-left: -60px;
+                position: absolute;
+                width: 120px;
+                content: "";
+                height: 5px;
+                bottom: 0;
+                left: 50%;
+            }
+        }
+
+        #indexCardGroup {
+
+            img {
+                border-top-left-radius: 0.5rem;
+                border-top-right-radius: 0.5rem;
+                object-fit: cover;
+                height: 240px;
+            }
+
+            a {
+                position: relative;
+                margin: 16px auto;
+                // left: 72px;
+            }
+        }
+
+        #indexCarousel {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                url(https://image.shutterstock.com/image-photo/parents-giving-piggyback-ride-children-260nw-160939997.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+            height: 33.33em;
+
+            .caption {
+                padding: 12% 0%;
+
+                @media only screen and (max-width: 430px) {
+                    padding: 40% 15%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,133 @@
+main.ywca-harbor {
+    &.contact-us {
+
+        #contactUsHero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                url(https://image.shutterstock.com/image-photo/african-american-cute-little-girl-260nw-288152339.jpg);
+            @extend %hero;
+        }
+
+        #contactUsResources {
+            text-align: center;
+
+            .card-group {
+                img {
+                    border-top-left-radius: 0.5rem;
+                    border-top-right-radius: 0.5rem;
+                    object-fit: cover;
+                    height: 296px;
+
+                    @media only screen and (max-width: 992px) {
+                        height: unset;
+                    }
+                }
+
+                a {
+                    position: relative;
+                    margin: 16px auto;
+
+                    i {
+                        padding: 0px 4px;
+                    }
+                }
+
+                &:last-child {
+                    .card {
+                        &:last-child {
+                            img {
+                                object-fit: contain;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        #contactUsInformation {
+            .col-md-6.col-sm-12 {
+
+                &:first-child {
+                    div {
+                        padding: 0px .83333%;
+                        margin-bottom: 45px;
+                        float: left;
+                        width: 50%;
+
+                        a {
+                            font-size: 12px;
+                        }
+
+                        @media only screen and (max-width:992px) {
+                            width: 100%;
+                        }
+                    }
+                }
+
+                #contactUsMap {
+                    background-image: url(/img/map-sm.png);
+                    background-size: cover;
+                    padding-bottom: 240px;
+                    padding-right: 160px;
+
+                    .map-direction {
+
+                        .directions {
+                            padding: 48px 48px 48px 80px;
+                            background: $primaryOrange;
+                            background-size: 6%;
+                            position: relative;
+                            width: 360px;
+                            margin: auto;
+
+                            p {
+                                margin: 16px 0px;
+                                color: #fff;
+                            }
+
+                            .btn {
+                                border: 2px solid #fff;
+                                text-align: center;
+                                margin: 0px;
+                                display: block;
+                            }
+
+                            &::after {
+                                border: solid transparent;
+                                pointer-events: none;
+                                border-width: 12px;
+                                position: absolute;
+                                margin-left: -12px;
+                                content: " ";
+                                top: 100%;
+                                left: 50%;
+                                height: 0;
+                                width: 0;
+                                border-color: #fa461600;
+                                border-top-color: $primaryOrange;
+                            }
+
+                            @media only screen and (max-width:992px) {
+                                padding: 24px 24px 24px 40px;
+                                width: 240px;
+                            }
+                        }
+                    }
+
+                    @media only screen and (max-width:1199px) {
+                        padding-right: 72px;
+                    }
+
+                    @media only screen and (max-width:992px) {
+                        background-position: -56px -64px;
+                        padding-bottom: 360px;
+                        padding-right: 0px;
+                    }
+
+                    @media only screen and (max-width:767px) {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

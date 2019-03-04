@@ -1,0 +1,31 @@
+html,
+body {
+    margin: 0px;
+}
+
+// vendors
+@import './vendors/bootstrap';
+@import './vendors/calendar.scss';
+
+// 01-atoms
+@import './01-atoms/colors';
+@import './01-atoms/animations';
+@import './01-atoms/typography';
+@import './01-atoms/buttons';
+@import './01-atoms/icons';
+@import './01-atoms/input';
+
+// 02-molecules
+@import './02-molecules/button-group';
+@import './02-molecules/failureIE';
+@import './02-molecules/navbar';
+@import './02-molecules/footer';
+@import './02-molecules/hero';
+
+// pages
+@import './pages/index';
+@import './pages/about';
+@import './pages/programs';
+@import './pages/children';
+@import './pages/contact-us';
+@import './pages/get-involved';

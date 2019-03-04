@@ -1,0 +1,207 @@
+main.ywca-harbor {
+    &.programs {
+        &-racial-justice {
+            #programsRJHero {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),   
+                url(https://image.shutterstock.com/image-photo/washington-december-13-protesters-march-260nw-237428011.jpg);
+                @extend %hero;
+            }
+
+            #programsRJStats {
+
+                p {
+                    font-weight: 800;
+
+                    strong {
+                        color: $primaryOrange;
+                    }
+                }
+            }
+
+            #programsRJMessage {
+                background: url(https://image.shutterstock.com/image-photo/old-young-holding-hands-on-260nw-256885348.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                min-height: 27.27em;
+                text-align: center;
+                margin: 0;
+                border-bottom: 3px solid $mediumLightGrey;
+
+                p {
+                    color: #fff;
+
+                    &:first-child {
+                        font-size: 36px;
+                    }
+                }
+            }
+
+            #programsHTHero {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),   
+                url(https://image.shutterstock.com/image-photo/womans-hand-grabs-fence-concept-260nw-411771103.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                min-height: 27.27em;
+                text-align: center;
+            }
+
+            #programsHTFact {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),   
+                url(https://o.aolcdn.com/images/dims?quality=85&image_uri=https%3A%2F%2Fo.aolcdn.com%2Fhss%2Fstorage%2Fmidas%2F7ac80d76d958c715578266b0db7f1ae4%2F202691470%2Fscottkellyla.png&client=amp-blogside-v2&signature=1762bf0c177326912790e32b771c340e27877e64);
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                background-size: cover;
+                min-height: 27.27em;
+                text-align: center;
+            }
+        }
+
+        &-human-wellness {
+
+            #programsHWHero {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),   
+                url(https://image.shutterstock.com/image-photo/senior-adult-couple-exercise-fitness-260nw-583124596.jpg);
+                @extend %hero;
+            }
+
+            #programsHWContent {
+
+                #HWTabsWrapper {
+                    border: 1px solid $darkWhite;
+
+                    h3 {
+                        text-align: center;
+                    }
+
+                    .nav-link {
+                        border: 1px solid $primaryOrange;
+                        color: $primaryOrange;
+                        margin: 4px 0px;
+
+                        &.active {
+                            @extend %transitions;
+                            color: #fff;
+                        }
+
+                        &:hover {
+                            background: $primaryOrange;
+                            @extend %transitions;
+                            color: #fff;
+                        }
+
+                        &:last-child {
+                            margin-bottom: 2em;
+                        }
+                    }
+                }
+
+                #HWTabContent {
+                    padding: 24px;
+
+                    .tab-pane {
+                        @extend %transitions;
+
+                        &.active {
+                            @extend %transitions;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-seasons {
+            #programsSeasonsHero {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                url(https://image.shutterstock.com/image-photo/christmas-decoration-mistletoe-holly-berriesivy-260nw-751034857.jpg);
+                @extend %hero;
+            }
+
+            #programsSeasonsContent {
+
+                #SeasonsTabsWrapper {
+                    border: 1px solid $darkWhite;
+
+                    h3 {
+                        text-align: center;
+                    }
+
+                    .nav-link {
+                        border: 1px solid $primaryOrange;
+                        color: $primaryOrange;
+                        margin: 4px 0px;
+
+                        &.active {
+                            @extend %transitions;
+                            color: #fff;
+                        }
+
+                        &:hover {
+                            background: $primaryOrange;
+                            @extend %transitions;
+                            color: #fff;
+                        }
+
+                        &:last-child {
+                            margin-bottom: 2em;
+                        }
+                    }
+                }
+
+                #SeasonsTabContent {
+                    padding: 24px;
+
+                    .tab-pane {
+                        @extend %transitions;
+
+                        &.active {
+                            @extend %transitions;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-thrift-store {
+            #thriftStoreHero {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                url(https://image.shutterstock.com/image-photo/clothes-hang-on-shelf-store-260nw-301224008.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                height:  100%;
+            }
+
+            #thriftStoreIntro,
+            #thriftStoreInformation {
+                text-align: center;
+            }
+
+            #thriftStoreInformation {
+                .card-group {
+                    min-height: 512px;
+
+                    .card {
+                        transform-style: preserve-3d;
+                        transition: transform 1s;
+                        position: relative;
+                        min-height: 540px;
+                        cursor: pointer;
+
+                        .card__face {
+                            backface-visibility: hidden;
+                            position: absolute;
+                            height: 100%;
+                            width: 100%;
+
+                            &.back {
+                                transform: rotateY( 180deg );
+                            }
+                        }
+                        &:hover {
+                            transform: rotateY(180deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
