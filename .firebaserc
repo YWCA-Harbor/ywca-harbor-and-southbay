@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "ywca-harbor-and-southbay"
+    "default": "ywca-harbor-and-southbay",
+    "develop": "ywca-harbor-dev"
   }
 }
