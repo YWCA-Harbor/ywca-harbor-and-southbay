@@ -23,7 +23,25 @@ module.exports = {
     ],
     script: [
       {
-        src: "/bundle.min.js", // add period when ready to build
+        src:
+          "https://cdnjs.cloudflare.com/ajax/libs/bootstrap.native/2.0.15/polyfill.min.js",
+        defer: true,
+        body: true
+      },
+      {
+        src:
+          "https://cdnjs.cloudflare.com/ajax/libs/bootstrap.native/2.0.15/bootstrap-native-v4.min.js",
+        defer: true,
+        body: true
+      },
+      {
+        src: "/bundle.min.js",
+        defer: true,
+        body: true
+      },
+      {
+        src: "/vendors.min.js",
+        defer: true,
         body: true
       }
     ],
@@ -31,30 +49,30 @@ module.exports = {
       {
         rel: "apple-touch-icon",
         size: "180x180",
-        href: "/img/apple-touch-icon.png" // add period when ready to build
+        href: "/img/apple-touch-icon.png"
       },
       {
         rel: "icon",
         type: "image/png",
-        href: "/img/favicon-32x32.png" // add period when ready to build
+        href: "/img/favicon-32x32.png"
       },
       {
         rel: "icon",
         type: "image/png",
-        href: "/img/favicon-16x16.png" // add period when ready to build
+        href: "/img/favicon-16x16.png"
       },
       {
         rel: "manifest",
-        href: "/img/site.webmanifest" // add period when ready to build
+        href: "/img/site.webmanifest"
       },
       {
         rel: "mask-icon",
-        href: "/img/safari-pinned-tab.svg", // add period when ready to build
+        href: "/img/safari-pinned-tab.svg",
         color: "#da532c"
       },
       {
         rel: "shortcut icon",
-        href: "/img/favicon.ico" // add period when ready to build
+        href: "/img/favicon.ico"
       },
       {
         rel: "stylesheet",
@@ -88,7 +106,7 @@ module.exports = {
       },
       {
         rel: "stylesheet",
-        href: "/styles.css" // add period when ready to build
+        href: "/styles.css"
       }
     ]
   },
