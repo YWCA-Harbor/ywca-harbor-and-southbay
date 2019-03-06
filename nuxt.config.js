@@ -7,8 +7,7 @@ module.exports = {
    */
   head: {
     title: "YWCA Harbor Area & South Bay",
-    meta: [
-      {
+    meta: [{
         charset: "utf-8"
       },
       {
@@ -21,45 +20,58 @@ module.exports = {
         content: "https://www.youtube.com/watch?v=8hgWXQFtaaw&feature=youtu.be"
       }
     ],
-    script: [
+    script: [{
+        src: "https://cdnjs.cloudflare.com/ajax/libs/bootstrap.native/2.0.15/polyfill.min.js",
+        defer: true,
+        body: true
+      },
       {
-        src: "/bundle.min.js", // add period when ready to build
+        src: "https://cdnjs.cloudflare.com/ajax/libs/bootstrap.native/2.0.15/bootstrap-native-v4.min.js",
+        defer: true,
+        body: true
+      },
+      {
+        src: "/bundle.min.js",
+        defer: true,
+        body: true
+      },
+      {
+        src: "/vendors.min.js",
+        defer: true,
         body: true
       }
     ],
-    link: [
-      {
+    link: [{
         rel: "apple-touch-icon",
         size: "180x180",
-        href: "/img/apple-touch-icon.png" // add period when ready to build
+        href: "/img/apple-touch-icon.png"
       },
       {
         rel: "icon",
         type: "image/png",
-        href: "/img/favicon-32x32.png" // add period when ready to build
+        href: "/img/favicon-32x32.png"
       },
       {
         rel: "icon",
         type: "image/png",
-        href: "/img/favicon-16x16.png" // add period when ready to build
+        href: "/img/favicon-16x16.png"
       },
       {
         rel: "manifest",
-        href: "/img/site.webmanifest" // add period when ready to build
+        href: "/img/site.webmanifest"
       },
       {
         rel: "mask-icon",
-        href: "/img/safari-pinned-tab.svg", // add period when ready to build
+        href: "/img/safari-pinned-tab.svg",
         color: "#da532c"
       },
       {
         rel: "shortcut icon",
-        href: "/img/favicon.ico" // add period when ready to build
+        href: "/img/favicon.ico"
       },
       {
         rel: "stylesheet",
-        href:
-          "https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700"
+        href: "https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700"
       },
       {
         rel: "stylesheet",
@@ -68,27 +80,24 @@ module.exports = {
       {
         rel: "stylesheet",
         href: "https://use.fontawesome.com/releases/v5.5.0/css/regular.css",
-        integrity:
-          "sha384-z3ccjLyn+akM2DtvRQCXJwvT5bGZsspS4uptQKNXNg778nyzvdMqiGcqHVGiAUyY",
+        integrity: "sha384-z3ccjLyn+akM2DtvRQCXJwvT5bGZsspS4uptQKNXNg778nyzvdMqiGcqHVGiAUyY",
         crossorigin: "anonymous"
       },
       {
         rel: "stylesheet",
         href: "https://use.fontawesome.com/releases/v5.5.0/css/brands.css",
-        integrity:
-          "sha384-QT2Z8ljl3UupqMtQNmPyhSPO/d5qbrzWmFxJqmY7tqoTuT2YrQLEqzvVOP2cT5XW",
+        integrity: "sha384-QT2Z8ljl3UupqMtQNmPyhSPO/d5qbrzWmFxJqmY7tqoTuT2YrQLEqzvVOP2cT5XW",
         crossorigin: "anonymous"
       },
       {
         rel: "stylesheet",
         href: "https://use.fontawesome.com/releases/v5.5.0/css/fontawesome.css",
-        integrity:
-          "sha384-u5J7JghGz0qUrmEsWzBQkfvc8nK3fUT7DCaQzNQ+q4oEXhGSx+P2OqjWsfIRB8QT",
+        integrity: "sha384-u5J7JghGz0qUrmEsWzBQkfvc8nK3fUT7DCaQzNQ+q4oEXhGSx+P2OqjWsfIRB8QT",
         crossorigin: "anonymous"
       },
       {
         rel: "stylesheet",
-        href: "/styles.css" // add period when ready to build
+        href: "/styles.css"
       }
     ]
   },
@@ -137,7 +146,7 @@ module.exports = {
    ** Generate options for static build
    */
   generate: {
-    routes: function() {
+    routes: function () {
       let events = axios
         .get(
           "https://ywca-harbor-and-southbay.firebaseio.com/flamelink/environments/production/content/calendarEvents/en-US.json"
