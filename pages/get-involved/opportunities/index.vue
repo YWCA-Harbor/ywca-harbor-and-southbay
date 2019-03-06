@@ -51,7 +51,7 @@
               aria-labelledby="employment-tab"
             >
               <nuxt-link
-                v-for="opportunity in employmentOpportunities"
+                v-for="opportunity in getEmployees"
                 tag="a"
                 :key="opportunity.id"
                 :to="`/get-involved/opportunities/${opportunity.id}`"
@@ -60,7 +60,7 @@
             </div>
             <div class="tab-pane" id="volunteer" role="tabpanel" aria-labelledby="volunteer-tab">
               <nuxt-link
-                v-for="opportunity in volunteerOpportunities"
+                v-for="opportunity in getVolunteers"
                 tag="a"
                 :key="opportunity.id"
                 :to="`/get-involved/opportunities/${opportunity.id}`"
@@ -79,18 +79,14 @@
 import axios from "axios";
 
 export default {
-  async asyncData() {
-    try {
-      let res = await axios.get(
-        "https://ywca-harbor-and-southbay.firebaseio.com/flamelink/environments/production/content.json"
-      );
-      let { employmentOpportunities, volunteerOpportunities } = res.data;
-      employmentOpportunities = employmentOpportunities["en-US"];
-      volunteerOpportunities = volunteerOpportunities["en-US"];
-
-      return { employmentOpportunities, volunteerOpportunities };
-    } catch (err) {
-      console.log(`Error: ${err}`);
+  computed: {
+    getEmployees() {
+      const { employment } = this.$store.state.opportunities;
+      return employment;
+    },
+    getVolunteers() {
+      const { volunteer } = this.$store.state.opportunities;
+      return volunteer;
     }
   },
   mounted: function() {

@@ -10,47 +10,10 @@
 import axios from "axios";
 
 export default {
-  async asyncData() {
-    try {
-      const res = await axios.get(
-        "https://ywca-harbor-and-southbay.firebaseio.com/flamelink/environments/production/content/calendarEvents.json"
-      );
-      const events = res.data["en-US"];
-      let calendarObj = {};
-      for (let event in events) {
-        let date = events[event].date.split("T")[0];
-        let year = date.split("-")[0];
-        let month = date.split("-")[1];
-        let day = date.split("-")[2];
-        let atTime = new Date(`${date}T${events[event].time}`);
-        let endTime = new Date(`${date}T${events[event].endTime}`);
-        if (!calendarObj[year]) {
-          calendarObj[year] = {};
-        }
-        if (!calendarObj[year][month - 1]) {
-          calendarObj[year][month - 1] = {};
-        }
-        if (!calendarObj[year][month - 1][day]) {
-          calendarObj[year][month - 1][day] = [
-            {
-              displayname: events[event].eventName,
-              duration: endTime,
-              at: atTime,
-              id: event
-            }
-          ];
-        } else {
-          calendarObj[year][month - 1][day].push({
-            displayname: events[event].eventName,
-            duration: endTime,
-            at: atTime,
-            id: event
-          });
-        }
-      }
-      return { events, calendarObj };
-    } catch (err) {
-      console.log(`Error: ${err}`);
+  computed: {
+    getEvents() {
+      const { events } = this.$store.state;
+      return events;
     }
   },
   mounted: function() {
@@ -72,6 +35,7 @@ export default {
     document.body.appendChild(bundleScript);
 
     var elem = this.$refs.myCalendar;
+    var { calendarObj } = this.getEvents;
     var calendar = new JSCalendar(elem, {
       eventBackground: "rgb(250, 70, 22)"
     });
@@ -83,7 +47,7 @@ export default {
 
     calendar
       .init()
-      .setMatrix(this.calendarObj)
+      .setMatrix(calendarObj)
       .render();
   },
   destroyed: function() {

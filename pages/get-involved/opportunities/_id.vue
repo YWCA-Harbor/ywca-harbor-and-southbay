@@ -1,14 +1,18 @@
 <template>
   <main class="ywca-harbor get-involved-opportunities-post">
-    <div v-if="err" class="container">
-      <h1>Oh no</h1>
+    <div v-if="getEmployees" class="container">
+      <h2>{{ getEmployees.jobTitle}}</h2>
+      <p>{{ getEmployees.jobDescription}}</p>
+      <div v-html="getEmployees.jobRequirements"></div>
+      <div v-html="getEmployees.jobResponsibilities"></div>
+    </div>
+    <div v-else-if="getVolunteers" class="container">
+      <h2>{{ getVolunteers.volunteerTitle }}</h2>
+      <p>{{ getVolunteers.volunteerRole }}</p>
+      <div v-html="getVolunteers.volunteerRequirements"></div>
     </div>
     <div v-else class="container">
-      <h2>{{ opportunity.jobTitle || opportunity.volunteerTitle }}</h2>
-      <p>{{ opportunity.jobDescription || opportunity.volunteerRole }}</p>
-      <div v-html="opportunity.volunteerRequirements"></div>
-      <div v-html="opportunity.jobRequirements"></div>
-      <div v-html="opportunity.jobResponsibilities"></div>
+      <h1>Oh no</h1>
     </div>
   </main>
 </template>
@@ -21,27 +25,16 @@ export default {
     // Must be a number
     return /^\d+$/.test(params.id);
   },
-  async asyncData({ params }) {
-    try {
-      let res = await axios.get(
-        `https://ywca-harbor-and-southbay.firebaseio.com/flamelink/environments/production/content/employmentOpportunities/en-US/${
-          params.id
-        }.json`
-      );
-      if (res.data === null) {
-        res = await axios.get(
-          `https://ywca-harbor-and-southbay.firebaseio.com/flamelink/environments/production/content/volunteerOpportunities/en-US/${
-            params.id
-          }.json`
-        );
-      }
-      if (res.data === null) {
-        return { err: true };
-      }
-      const opportunity = res.data;
-      return { opportunity, err: false };
-    } catch (err) {
-      console.log(`Error: ${err}`);
+  computed: {
+    getEmployees() {
+      const { employment } = this.$store.state.opportunities;
+      const urlPath = this.$nuxt._route.params.id;
+      return employment[urlPath];
+    },
+    getVolunteers() {
+      const { volunteer } = this.$store.state.opportunities;
+      const urlPath = this.$nuxt._route.params.id;
+      return volunteer[urlPath];
     }
   }
 };
